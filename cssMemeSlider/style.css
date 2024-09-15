@@ -1,0 +1,139 @@
+*, html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: transform 1s ease;
+}
+
+input {
+    display: none;
+}
+
+.slider-wrapper {
+    padding-top: 5vh;
+    width: 100%;
+    height: 100vh;
+    background-color: dimgray;
+}
+
+.slider {
+    width: 70vw;
+    height: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+    row-gap: 2.5vw;
+}
+
+.imgs {
+    display: flex;
+    width: 70vw;
+    overflow: hidden;
+    margin: 0 auto;
+    border-radius: 0.8em;
+    box-shadow: 0 0.3em 0.5em rgb(29, 28, 28);
+}
+
+.imgs img {
+    width: 70vw;
+}
+
+.names {
+    display: flex;
+    overflow: hidden;
+    width: 50vw;
+}
+
+.names p {
+    min-width: 50vw;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 2.5vw;
+    line-height: 2.5vw;
+    margin-top: 2.5vw;
+    color: white;
+    align-items: center;
+}
+
+.lower {
+    display: flex;
+}
+
+.controls {
+    display: flex;
+    margin-left: auto;
+    margin-top: 3.5vw;
+    justify-content: flex-end;
+}
+
+.controls label {
+    width: 1.5vw;
+    height: 1.5vw;
+    margin: 0 0.5vw;
+    background: lightskyblue;
+    border-radius: 100%;
+    cursor: pointer;
+}
+
+.increase-area {
+    display: flex;
+    margin-left: -0.5vw;
+    margin-top: -0.5vw;
+    width: 2.5vw;
+    height: 2.5vw;
+}
+
+.controls label:hover {
+    background: white;
+    border: none;
+}
+
+#radio-1:checked ~ .imgs img {
+    transform: translateX(0);
+}
+#radio-2:checked ~ .imgs img {
+    transform: translateX(-70vw);
+} 
+#radio-3:checked ~ .imgs img {
+    transform: translateX(-140vw);
+}
+#radio-4:checked ~ .imgs img {
+    transform: translateX(-210vw);
+}
+
+#radio-1:checked ~ .lower .names p {
+    transform: translateX(0);
+}
+#radio-2:checked ~ .lower .names p {
+    transform: translateX(-50vw);
+}
+#radio-3:checked ~ .lower .names p {
+    transform: translateX(-100vw);
+}
+#radio-4:checked ~ .lower .names p {
+    transform: translateX(-150vw);
+}
+
+#radio-1:checked ~ .lower .controls #label-1,
+#radio-2:checked ~ .lower .controls #label-2,
+#radio-3:checked ~ .lower .controls #label-3,
+#radio-4:checked ~ .lower .controls #label-4 {
+    border: 0.1em solid lightskyblue;
+    background: none;
+}
+
+#radio-1:checked ~ .lower .controls #label-1:hover,
+#radio-2:checked ~ .lower .controls #label-2:hover,
+#radio-3:checked ~ .lower .controls #label-3:hover,
+#radio-4:checked ~ .lower .controls #label-4:hover {
+    border: 0.1em solid white;
+}
+
+@media all and (max-width: 768px) {
+    .lower {
+        flex-direction: column-reverse;
+    }
+
+    .controls {
+        margin: 0 auto;
+        margin-top: 3.5vw;
+    }
+}
