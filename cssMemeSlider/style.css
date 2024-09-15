@@ -29,8 +29,8 @@ input {
     width: 70vw;
     overflow: hidden;
     margin: 0 auto;
-    border-radius: 10px;
-    box-shadow: 0px 7px 5px rgb(29, 28, 28);
+    border-radius: 0.8em;
+    box-shadow: 0 0.3em 0.5em rgb(29, 28, 28);
 }
 
 .imgs img {
@@ -50,11 +50,17 @@ input {
     line-height: 2.5vw;
     margin-top: 2.5vw;
     color: white;
+    align-items: center;
+}
+
+.lower {
+    display: flex;
 }
 
 .controls {
     display: flex;
-    margin: -2vw auto;
+    margin-left: auto;
+    margin-top: 3.5vw;
     justify-content: flex-end;
 }
 
@@ -68,9 +74,9 @@ input {
 }
 
 .increase-area {
+    display: flex;
     margin-left: -0.5vw;
     margin-top: -0.5vw;
-    display: flex;
     width: 2.5vw;
     height: 2.5vw;
 }
@@ -93,34 +99,41 @@ input {
     transform: translateX(-210vw);
 }
 
-#radio-1:checked ~ .names p {
+#radio-1:checked ~ .lower .names p {
     transform: translateX(0);
 }
-#radio-2:checked ~ .names p {
+#radio-2:checked ~ .lower .names p {
     transform: translateX(-50vw);
 }
-#radio-3:checked ~ .names p {
+#radio-3:checked ~ .lower .names p {
     transform: translateX(-100vw);
 }
-#radio-4:checked ~ .names p {
+#radio-4:checked ~ .lower .names p {
     transform: translateX(-150vw);
 }
 
-#radio-1:checked ~ .controls #label-1,
-#radio-2:checked ~ .controls #label-2,
-#radio-3:checked ~ .controls #label-3,
-#radio-4:checked ~ .controls #label-4 {
-    border: 1px solid lightskyblue;
+#radio-1:checked ~ .lower .controls #label-1,
+#radio-2:checked ~ .lower .controls #label-2,
+#radio-3:checked ~ .lower .controls #label-3,
+#radio-4:checked ~ .lower .controls #label-4 {
+    border: 0.1em solid lightskyblue;
     background: none;
 }
 
-#radio-1:checked ~ .controls #label-1:hover,
-#radio-2:checked ~ .controls #label-2:hover,
-#radio-3:checked ~ .controls #label-3:hover,
-#radio-4:checked ~ .controls #label-4:hover {
-    border: 1px solid white;
+#radio-1:checked ~ .lower .controls #label-1:hover,
+#radio-2:checked ~ .lower .controls #label-2:hover,
+#radio-3:checked ~ .lower .controls #label-3:hover,
+#radio-4:checked ~ .lower .controls #label-4:hover {
+    border: 0.1em solid white;
 }
 
-@media screen and (max-width: 768px) {
-    
+@media all and (max-width: 768px) {
+    .lower {
+        flex-direction: column-reverse;
+    }
+
+    .controls {
+        margin: 0 auto;
+        margin-top: 3.5vw;
+    }
 }
